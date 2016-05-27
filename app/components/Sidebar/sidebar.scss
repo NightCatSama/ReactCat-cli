@@ -1,0 +1,482 @@
+.ReactCat-sidebar {
+	background-color: #333;
+	margin: 0;
+    padding: 20px;
+	box-sizing: border-box;
+	list-style:none;
+	transition: transform .5s;
+	font-family: "Raleway",'Microsoft YaHei','Helvetica Neue','Helvetica','Arial','sans-serif';
+
+	>li>a {
+		//所有的一级标题
+		padding: 10px;
+	}
+
+	[class^="ReactCat-sidebar-item"] {
+		position: relative;
+	}
+
+	&.fixed-left {
+		height: 100%;
+		position: fixed;
+	    left: 0;
+	    top: 0;
+	}
+
+	&.fixed-right {
+		height: 100%;
+		position: fixed;
+	    right: 0;
+	    top: 0;
+	}
+
+	&.absolute-left {
+		height: 100%;
+		position: absolute;
+	    left: 0;
+	    top: 0;
+	}
+
+	&.absolute-left.ReactCat-sidebar-hide {
+		transform: translate(-100%,0);
+	}
+
+	&.fixed-right.ReactCat-sidebar-hide {
+		transform: translate(100%,0);
+	}
+}
+
+.ReactCat-sidebar * {
+	box-sizing: border-box;
+}
+
+.ReactCat-sidebar ul {
+	list-style: none;
+	padding-left: 30px;
+}
+
+.ReactCat-sidebar a {
+	color: #FFF;
+	text-decoration: none;
+	width: 100%;
+	padding: 8px;
+	display: block;
+	transition: background-color .12s, color .12s;
+
+	&:hover {
+		background-color: #B03A5B;
+	}
+
+	&.selected {
+		color: #B03A5B!important;
+		background-color: #FFFAFA!important;
+	}
+}
+
+/* *****************  垂直样式  ********************* */
+
+.ReactCat-sidebar.ReactCat-sidebar-verticality {
+	/*
+	 * click样式
+	 */
+	.ReactCat-sidebar-item1, .ReactCat-sidebar-item2, .ReactCat-sidebar-item3{
+		overflow: hidden;
+		width: 100%;
+		color: #FFF;
+	}
+
+	.ReactCat-sidebar-item1{
+		>a {
+			//有下拉的一级标题
+		}
+		>ul {
+		//二级菜单
+			a {
+				//二级标签
+				font-size: 90%;
+
+				&.ReactCat-subsidebar{
+					//有下拉二级标签
+				}
+			}
+		}
+
+		//二级菜单打开后
+		&.ReactCat-sidebar-open {
+			>a {
+				//一级标题（打开后）
+			}
+			>ul {
+				//二级菜单（打开后）
+			}
+		}
+	}
+
+	.ReactCat-sidebar-item2{
+		>ul {
+		//三级菜单
+			a {
+				//三级标签
+				font-size: 80%;
+
+				&.ReactCat-subsidebar{
+					//有下拉三级标签
+				}
+			}
+		}
+
+		&.ReactCat-sidebar-open {
+			>a {
+				//二级标题（打开后）
+			}
+			>ul {
+				//二级菜单（打开后）
+			}
+		}
+	}
+
+	//可拉下标签通用样式
+	.ReactCat-subsidebar {
+		position: relative;
+
+		&::after {
+			font-family: 'anticon';
+			position: absolute;
+			font-size: inherit;
+			right: 10px;
+		    content: "+";
+		    transition: transform .2s
+		}
+
+	}
+
+	.ReactCat-sidebar-open {
+
+		> .ReactCat-subsidebar {
+			&::after {
+				transform: rotate(45deg);
+			}
+		}
+	}
+
+
+	/*
+	 * hover样式
+	 */
+	 &.ReactCat-sidebar-hover {
+		[class^="ReactCat-sidebar-item"] {
+			overflow: visible;
+
+			>ul {
+				// z-index: 9!important;
+				top: 0;
+				left: 100%;
+			}
+		}
+		.ReactCat-sidebar-item1{
+			>a {
+				//有下拉的一级标题
+			}
+			>ul {
+				position: absolute;
+				width: 120%;
+				text-align: left;
+				box-shadow: 0 0 5px 2px rgba(0,0,0,.36);
+				color: #666;
+				background-color: #FFF;
+
+			    flex-direction: column;
+			    z-index: 11;
+
+				//二级菜单
+				a {
+					//二级标签
+					color: #666;
+					padding-left: 0;
+
+					&.ReactCat-subsidebar{
+						//有下拉二级标签
+					}
+				}
+			}
+
+			//二级菜单打开后
+			&.ReactCat-sidebar-open {
+				>a {
+					//一级标题（打开后）
+				}
+				>ul {
+					//二级菜单（打开后）
+				}
+			}
+		}
+
+		.ReactCat-sidebar-item2{
+			overflow: visible;
+			position: relative;
+
+			>ul {
+				position: absolute;
+				top: 0;
+				left: 100%;
+				width: 120%;
+				text-align: left;
+				box-shadow: 0 0 5px 2px rgba(0,0,0,.36);
+				color: #666;
+				background-color: #FFF;
+
+			    flex-direction: column;
+			    z-index: 11;
+			//三级菜单
+				a {
+					//三级标签
+
+
+					&.ReactCat-subsidebar{
+						//有下拉三级标签
+					}
+				}
+			}
+
+			&.ReactCat-sidebar-open {
+				>a {
+					//二级标题（打开后）
+				}
+				>ul {
+					//二级菜单（打开后）
+				}
+			}
+		}
+
+		//可拉下标签通用样式
+		.ReactCat-subsidebar {
+			position: relative;
+
+			&::after {
+				font-family: 'anticon';
+				position: absolute;
+				font-size: inherit;
+				right: 10px;
+			    content: none;
+			    transform: rotate(90deg);
+			    transition: transform .2s
+			}
+
+		}
+
+		.ReactCat-sidebar-open {
+
+			> .ReactCat-subsidebar {
+
+				&::before {
+					content: '';
+					height: 5px;
+					width: 100%;
+					background-color: pink;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					display: block;
+				}
+
+				// &::after {
+				// 	transform: rotate(-90deg);
+				// }
+			}
+		}
+
+	}
+}
+
+/* *****************  水平样式  ********************* */
+
+.ReactCat-sidebar.ReactCat-sidebar-horizontal {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+
+	>li {
+		display: inline-flex;
+		flex:1;
+		padding: 0;
+		position: relative;
+		text-align: center;
+		overflow: visible;
+
+		>a {
+			//所有的一级标题
+			padding: 0;
+			color: #FFF;
+		}
+
+		&:nth-last-child(-n+1) {
+			ul {
+				top: 0;
+				left: auto;
+				right: 100%;
+			}
+
+			>ul {
+				// z-index: 9!important;
+				top: 100%;
+				right: 0;
+			}
+		}
+	}
+	/*
+	 * click样式
+	 */
+	.ReactCat-sidebar-item1, .ReactCat-sidebar-item2, .ReactCat-sidebar-item3{
+		overflow: hidden;
+		width: 100%;
+		color: #FFF;
+	}
+
+			[class^="ReactCat-sidebar-item"] {
+			overflow: visible;
+
+			>ul {
+				// z-index: 9!important;
+				top: 100%;
+				left: 0px;
+			}
+		}
+		.ReactCat-sidebar-item1{
+			>a {
+				//有下拉的一级标题
+			}
+			>ul {
+				position: absolute;
+				width: 120%;
+				text-align: left;
+				box-shadow: 0 0 5px 2px rgba(0,0,0,.36);
+				color: #666;
+				background-color: #FFF;
+
+			    flex-direction: column;
+			    z-index: 11;
+
+				//二级菜单
+				a {
+					//二级标签
+					color: #666;
+					padding-left: 0;
+
+					&.ReactCat-subsidebar{
+						//有下拉二级标签
+					}
+				}
+			}
+
+			//二级菜单打开后
+			&.ReactCat-sidebar-open {
+				>a {
+					//一级标题（打开后）
+				}
+				>ul {
+					//二级菜单（打开后）
+				}
+			}
+		}
+
+		.ReactCat-sidebar-item2{
+			overflow: visible;
+			position: relative;
+
+			>ul {
+				position: absolute;
+				top: 0;
+				left: 100%;
+				width: 120%;
+				text-align: left;
+				box-shadow: 0 0 5px 2px rgba(0,0,0,.36);
+				color: #666;
+				background-color: #FFF;
+
+			    flex-direction: column;
+			    z-index: 11;
+			//三级菜单
+				a {
+					//三级标签
+
+
+					&.ReactCat-subsidebar{
+						//有下拉三级标签
+					}
+				}
+			}
+
+			&.ReactCat-sidebar-open {
+				>a {
+					//二级标题（打开后）
+				}
+				>ul {
+					//二级菜单（打开后）
+				}
+			}
+		}
+
+		//可拉下标签通用样式
+		.ReactCat-subsidebar {
+			position: relative;
+
+			&::after {
+				font-family: 'anticon';
+				position: absolute;
+				font-size: inherit;
+				right: 10px;
+			    content: none;
+			    transform: rotate(90deg);
+			    transition: transform .2s
+			}
+
+		}
+
+		.ReactCat-sidebar-open {
+
+			> .ReactCat-subsidebar {
+
+				&::before {
+					content: '';
+					height: 5px;
+					width: 100%;
+					background-color: pink;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					display: block;
+				}
+
+				// &::after {
+				// 	transform: rotate(-90deg);
+				// }
+			}
+		}
+
+
+	//可拉下标签通用样式
+	.ReactCat-subsidebar {
+		position: relative;
+
+		&::after {
+			font-family: 'anticon';
+			position: absolute;
+			font-size: inherit;
+			right: 10px;
+		    content: ">";
+		    transform: rotate(90deg);
+		    transition: transform .2s
+		}
+
+	}
+
+	.ReactCat-sidebar-open {
+
+		> .ReactCat-subsidebar {
+			&::after {
+				transform: rotate(-90deg);
+			}
+		}
+	}
+}

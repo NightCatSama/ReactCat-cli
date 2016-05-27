@@ -1,0 +1,167 @@
+[class^="ReactCat-btn-"] {
+	box-sizing: border-box;
+	-moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    font-family: "Helvetica Neue",Helvetica,Microsoft Yahei,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;
+    transition: border 0.25s linear 0s, color 0.25s linear 0s, background-color 0.25s linear 0s, width .25s linear 0s;
+
+	&.ReactCat-btn-xs {
+    	border-radius: 3px;
+	    font-size: 12px;
+	    line-height: 1.5;
+	    padding: 1px 5px;
+    }
+
+	&.ReactCat-btn-sm {
+    	border-radius: 3px;
+	    font-size: 12px;
+	    line-height: 1.5;
+	    padding: 5px 10px;
+    }
+
+    &.ReactCat-btn-lg {
+    	border-radius: 6px;
+	    font-size: 16px;
+	    line-height: 1.33333;
+	    padding: 8px 12px;
+    }
+
+    &:active {
+    	outline-offset: -2px;
+	    outline-width: 1px;
+	    outline-color: #000;
+	    outline-style: dotted;
+    }
+}
+[class^="ReactCat-btn-"][disabled] {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.ReactCat-btn-default {
+	color: #FFF;
+    background-color: #BBB;
+}
+
+.ReactCat-btn-default:not([disabled]):hover {
+	color: #fff;
+    background-color: #CECECE;
+    border-color: #CECECE;
+}
+
+.ReactCat-btn-default:active {
+	background: #a1a6a9!important;
+    border-color: #a1a6a9!important;
+}
+
+.ReactCat-btn-success {
+	color: #FFF;
+	background-color: #2ECC71;
+}
+
+.ReactCat-btn-success:not([disabled]):hover {
+	color: #fff;
+    background-color: #58d68d;
+    border-color: #58d68d;
+}
+
+.ReactCat-btn-success:active {
+	background: #27ad60!important;
+    border-color: #27ad60!important;
+}
+
+.ReactCat-btn-error {
+	color: #fff;
+    background-color: #e74c3c;
+}
+
+.ReactCat-btn-error:not([disabled]):hover {
+	color: #fff;
+    background-color: #ec7063;
+    border-color: #ec7063;
+}
+
+.ReactCat-btn-error:active {
+	background: #c44133!important;
+    border-color: #c44133!important;
+}
+
+.ReactCat-btn-warning {
+	color: #fff;
+    background-color: #f1c40f;
+}
+
+.ReactCat-btn-warning:not([disabled]):hover {
+	color: #fff;
+    background-color: #f4d313;
+    border-color: #f4d313;
+}
+
+.ReactCat-btn-warning:active {
+	background: #cda70d!important;
+    border-color: #cda70d!important;
+}
+
+.ReactCat-btn-info {
+	color: #fff;
+    background-color: #3498db;
+}
+
+.ReactCat-btn-info:not([disabled]):hover {
+	color: #fff;
+    background-color: #5dade2;
+    border-color: #5dade2;
+}
+
+.ReactCat-btn-info:active {
+	background: #2c81ba!important;
+    border-color: #2c81ba!important;
+}
+
+.ReactCat-btn-primary {
+    color: #fff;
+    background-color: #1abc9c;
+}
+
+.ReactCat-btn-primary:not([disabled]):hover {
+    color: #fff;
+    background-color: #48c9b0;
+    border-color: #48c9b0;
+}
+
+.ReactCat-btn-primary:active {
+    background: #16a085!important;
+    border-color: #16a085!important;
+}
+
+.ReactCat-btn-middle::before {
+	content: '';
+	width: 0;
+	height: 100%;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.ReactCat-btn-left {
+	text-align: left;
+}
+
+.ReactCat-btn-center {
+	text-align: center;
+}
+
+.ReactCat-btn-right {
+	text-align: right;
+}

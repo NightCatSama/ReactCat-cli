@@ -1,0 +1,77 @@
+*::after, *::before {
+	box-sizing: border-box;
+}
+.ReactCat-Grid-Wrap {
+	position: relative;
+	width: 100%;
+	vertical-align: top;
+
+	* {
+		box-sizing: border-box;
+	}
+
+	&.Input-Group {
+		.ReactCat-Grid-label{
+			text-align: right;
+
+			label {
+				color: #FFF;
+				font-size: 14px;
+				margin-right: 5px;
+			    vertical-align: middle;
+			}
+		}
+
+		.ReactCat-Grid-input {
+
+			input{
+				display: inline-block;
+				max-width: 100%;
+				border-radius: 8px;
+				border:none;
+				outline: none;
+				padding: 6px 10px 6px 15px;
+			}
+		}
+
+		.ReactCat-Grid-select {
+
+			select{
+				display: inline-block;
+				max-width: 100%;
+				border-radius: 8px;
+				border:none;
+				outline: none;
+				padding: 6px 10px 6px 15px;
+
+				option {
+
+				}
+			}
+		}
+	}
+}
+.ReactCat-Grid-Wrap::before, .ReactCat-Grid-Wrap::after{
+	content: " ";
+    display: table;
+    clear: both;
+}
+.ReactCat-Grid {
+	float: left;
+	min-height: 1px;
+	box-sizing: border-box;
+	padding: 0 5px;
+	position: relative;
+}
+
+.ReactCat-Grid-left {
+	text-align: left;
+}
+
+.ReactCat-Grid-center {
+	text-align: center;
+}
+
+.ReactCat-Grid-right {
+	text-align: right;
+}

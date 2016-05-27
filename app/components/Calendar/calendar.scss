@@ -1,0 +1,225 @@
+.Calendar {
+	margin: 0 auto;
+	display: inline-block;
+	width: auto;
+	font-family: "Microsoft YaHei";
+
+	.Calendar-Switch {
+		padding: 0 10px;
+		outline: none;
+		border-radius: 8px;
+		height: 30px;
+		line-height: 30px;
+		width: 150px;
+		font-size: 14px;
+		box-sizing: border-box;
+		border: 1px solid #CDCDCD;
+		background-color: #FFF;
+		color: #1F1F1F;
+	}
+}
+.Calendar-Wrap {
+	display: block;
+	width: 300px;
+	margin: 5px;
+	background-color: #1F1F1F;
+	padding: 20px;
+	line-height: normal;
+	box-sizing: border-box;
+	position: absolute;
+	z-index: 9;
+
+	.Calendar-Head {
+		width: 100%;
+		color: #CACACA;
+		font-size: 24px;
+		height: 30px;
+		cursor: default;
+
+		.Calendar-Year:hover, .Calendar-Month:hover {
+			color: #FFF;
+		}
+		.Switch-Month-Btn {
+			float: right;
+			width: 22px;
+			height: 22px;
+			margin-left: 20px;
+			margin-top: 6px;
+			opacity: .65;
+			background: url('./img/down.png') no-repeat center;
+
+			&:last-child {
+				background: url('./img/up.png') no-repeat center;
+			}
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+	.Calendar-Body {
+		margin-top: 15px;
+		cursor: default;
+		overflow: hidden;
+		width: 100%;
+		height: 200px;
+
+		tbody {
+			position: relative;
+			transform: scale(1);
+			opacity: 1;
+
+			&.Calendat-fadeout {
+				animation: fadeout .4s;
+			}
+			&.Calendat-fadein {
+				animation: fadein .4s;
+			}
+			&.Calendat-slidedown {
+				animation: slidedown .4s;
+			}
+			&.Calendat-slideup {
+				animation: slideup .4s;
+			}
+		}
+		th, td {
+			width: auto;
+			text-align: center;
+			box-sizing: border-box;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+		th {
+			color: #CCC;
+		}
+		td {
+			color: #6F6F6F;
+			border: 2px solid #1F1F1F;
+
+			&.Now_Month {
+				color: #FFF;
+			}
+			&.To_Date {
+				color: #FFF;
+				background-color: #0078D7;
+			}
+			&.Active_Date {
+				border-color: #5DADE2;
+
+				&:hover {
+					border: #8CB5CF solid 2px;
+				}
+			}
+			&.Month_List {
+				width: 25%;
+				color: #FFF;
+				font-size: 120%;
+			}
+			&.Year_List {
+				width: 20%;
+				color: #FFF;
+				font-size: 110%;
+			}
+			&.No_Date {
+				background-color: #333;
+				font-weight: lighter;
+				opacity: .5;
+			}
+			&:hover {
+				border: #888 solid 2px;
+			}
+		}
+	}
+}
+@keyframes fadeout {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	50% {
+		transform: scale(.8);
+		opacity: 0;
+	}
+	55% {
+		transform: scale(1.5);
+		opacity: 0;
+	}
+	60% {
+		transform: scale(1.5);
+		opacity: .5;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+@keyframes fadein {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	50% {
+		transform: scale(1.2);
+		opacity: 0;
+	}
+	55% {
+		transform: scale(.6);
+		opacity: 0;
+	}
+	60% {
+		transform: scale(.6);
+		opacity: .8;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+@keyframes slidedown {
+	0% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	20% {
+		opacity: 0;
+	}
+	70% {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	71% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+@keyframes slideup {
+	0% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	20% {
+		opacity: 0;
+	}
+	70% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	71% {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+::-webkit-input-placeholder { color:#999; font-size: 13px; line-height: normal; }
+::-moz-placeholder { color:#999; font-size: 13px; line-height: normal; } /* firefox 19+ */
+:-ms-input-placeholder { color:#999; font-size: 13px; line-height: normal; } /* ie */
+input:-moz-placeholder { color:#999; font-size: 13px; line-height: normal; }

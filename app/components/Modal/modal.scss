@@ -1,0 +1,339 @@
+.ReactCat-Modal-Wrap {
+	position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+	width: 100%;
+  z-index: 9999;
+	font-family: "Raleway",'Microsoft YaHei','Helvetica Neue','Helvetica','Arial','sans-serif';
+
+	&.ReactCat-Modal-Vertical  {
+		display: flex;
+		align-items: center;
+	}
+
+	.ReactCat-Modal-Fade {
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		left: 0;
+		top: 0;
+		background-color: rgba(0,0,0,.6);
+	}
+
+	.ReactCat-Modal {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		color: #333;
+		z-index: 1;
+		width: 32em;
+		top: 0;
+    left: 0;
+		border-radius: 8px;
+		background-color: #FFF;
+		transition: transform .5s;
+
+		&.ReactCat-Modal-Horizontal {
+			margin: 0 auto;
+		}
+
+		.ReactCat-Modal-Close {
+			color: #666;
+			position: absolute;
+			height: 4em;
+			line-height: 2em;
+			top: 0;
+			right: .5em;
+			font-size: 2em;
+			cursor: pointer;
+		}
+
+		.ReactCat-Modal-Header {
+			padding: .5em 1em;
+			height: 3em;
+			line-height: 3em;
+			border-radius: 8px 8px 0 0;
+			border-bottom: 1px solid #999;
+      cursor: auto;
+		}
+
+		.ReactCat-Modal-Body {
+			padding: 1em;
+			border-bottom: 1px solid #999;
+      cursor: auto;
+		}
+
+		.ReactCat-Modal-Footer {
+			padding: .5em;
+			border-radius: 0 0 8px 8px;
+			border-bottom: 1px solid #999;
+      cursor: auto;
+			overflow: hidden;
+
+			button {
+				margin: 0 5px;
+				float: right;
+			}
+		}
+
+    &.ReactCat-Modal-success {
+      color: #2ECC71;
+    }
+    &.ReactCat-Modal-warning {
+      color: #f1c40f;
+    }
+    &.ReactCat-Modal-error {
+      color: #e74c3c;
+    }
+    &.ReactCat-Modal-info {
+      color: #3498db;
+    }
+    &.ReactCat-Modal-primary {
+      color: #1abc9c;
+    }
+
+
+    &.ReactCat-Alert {
+      padding: 2em;
+
+      .ReactCat-Modal-Header {
+        padding: 0 1em;
+        height: 3em;
+        line-height: 3em;
+        border-radius: 8px 8px 0 0;
+        border-bottom: none;
+
+        .fa {
+          vertical-align: middle;
+          margin-right: 10px;
+        }
+      }
+
+      .ReactCat-Modal-Body {
+        padding: 5px 10px 5px 60px;
+        border-bottom: none;
+      }
+
+      .ReactCat-Modal-Footer {
+        padding: 0;
+        border-bottom: none;
+      }
+    }
+	}
+
+	&.ReactCat-Modal-Off {
+		display: none;
+
+		.ReactCat-Modal-Fade {
+			display: none;
+		}
+
+		.ReactCat-Modal {
+			display: none;
+		}
+	}
+}
+
+/*
+ * Animate.css [zoomIn fade fadeIn shake]
+ */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.zoomOut {
+  -webkit-animation-name: zoomOut;
+  animation-name: zoomOut;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 30%, 0);
+    transform: translate3d(0, 30%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -30%, 0);
+    transform: translate3d(0, -30%, 0);
+  }
+}
+
+.fadeOutUp {
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -30%, 0);
+    transform: translate3d(0, -30%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 30%, 0);
+    transform: translate3d(0, 30%, 0);
+  }
+}
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes shake {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+.shake {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}

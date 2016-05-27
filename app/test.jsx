@@ -1,17 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-// import DateActions from './actions/DateAction';
 import SidebarActions from './actions/SidebarAction';
 
-/* **** fetch **** */
-import 'whatwg-fetch';
+//import 'whatwg-fetch';
 
 import Icon from './components/Icon';
 import Button from './components/Button';
 import Modal from './components/Modal';
-
-// import './style/style.scss';
 
 export default class Test extends Component {
 	constructor (props) {

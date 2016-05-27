@@ -4,7 +4,7 @@
 <Button
 	onClick={fn}
 	theme="info"	//default 'default' [success, warning, error, info, primary]
-	once={true}
+	once={true}		//是否一次性按钮
 	size="lg"       //[lg, xs, sm]
 	type="button"	//default button [button, submit, reset]
 	disabled={false} //default false
@@ -40,7 +40,7 @@
 <Sidebar
 	width={280}
 	className="left"
-	position='fixed/left'
+	position='fixed-left‘
 	mode="horizontal"  //default verticality
 	multiple={false}
 	only={true}
@@ -81,13 +81,20 @@
 {/*   children-end   */}
 </Sidebar>
 
+
+/*
+ * 日历组件
+ */
 <Calendar
-	sign={2}
+	sign={0}
 	Selectclose={true}
-	onClose={() => closeDate(2)}
-	onSelectDate={(date, sign) => setDate(date, sign)}/>
+	onClose={() => closeDate(0)}
+	onSelectDate={(date, sign) => setDate(date, sign)}
+	/>
 
-
+/*
+ * 模态框组件
+ */
 let modalProps = {
 			key: 'modal',
 			ref: (ref) => this.modal = ref,

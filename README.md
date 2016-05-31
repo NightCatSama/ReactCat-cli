@@ -1,6 +1,6 @@
 # ReactCat-cli
 
-自答自用的React脚手架（React, Redux, Webpack, ES6）<br>
+自搭自用的React脚手架（React, Redux, Webpack, ES6）<br>
 带有自己写的一些组件（按钮， 侧边栏， 日历等）
 
 ## 使用到的部分关键模块
